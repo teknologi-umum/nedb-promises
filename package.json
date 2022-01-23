@@ -1,18 +1,27 @@
 {
-  "name": "nedb-promises",
+  "name": "@teknologi-umum/nedb-promises",
   "version": "5.0.2",
   "description": "A dead-simple promise wrapper for nedb.",
-  "main": "index.js",
+  "type": "module",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.js"
+    },
+    "./package.json": "./package.json",
+    "./*": "./*"
+  },
   "scripts": {
     "docs": "jsdoc2md ./src/*.js > docs.md --no-gfm",
-    "test": "jest",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js ",
     "test:watch": "jest --watchAll",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint": "eslint --ignore-path .gitignore .",
+    "lint:fix": "eslint --ignore-path .gitignore --fix ."
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bajankristof/nedb-promises.git"
+    "url": "git+https://github.com/teknologi-umum/nedb-promises.git"
   },
   "keywords": [
     "nedb",
@@ -22,15 +31,16 @@
   "author": "Kristóf Baján",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bajankristof/nedb-promises/issues"
+    "url": "https://github.com/teknologi-umum/nedb-promises/issues"
   },
-  "homepage": "https://github.com/bajankristof/nedb-promises#readme",
+  "homepage": "https://github.com/teknologi-umum/nedb-promises#readme",
   "dependencies": {
-    "@seald-io/nedb": "^2.2.0"
+    "@seald-io/nedb": "^2.2.1"
   },
   "devDependencies": {
-    "eslint": "^8.2.0",
-    "jest": "^27.3.1",
-    "jsdoc-to-markdown": "^7.0.1"
+    "@teknologi-umum/eslint-config-base": "^0.0.5",
+    "eslint": "^8.7.0",
+    "jest": "^27.4.7",
+    "jsdoc-to-markdown": "^7.1.0"
   }
 }

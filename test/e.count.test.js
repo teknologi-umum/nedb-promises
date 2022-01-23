@@ -1,23 +1,27 @@
-const Datastore = require('../src/Datastore');
+import Datastore from "../src/Datastore.js";
 
-describe('testing document counting', () => {
+describe("testing document counting", () => {
     const docs = [
-        { name: '1st document' },
-        { name: '2nd document' },
-        { name: '3rd document' },
+        { name: "1st document" },
+        { name: "2nd document" },
+        { name: "3rd document" }
     ];
 
     const datastore = Datastore.create();
-    beforeEach(async () => await datastore.insert(docs));
-    afterEach(async () => await datastore.remove({}, { multi: true }));
+    beforeEach(async () => {
+        await datastore.insert(docs);
+    });
+    afterEach(async () => {
+        await datastore.remove({}, { multi: true });
+    });
 
-    describe('count', () => {
-        it('should get the count of the docs', async () => {
+    describe("count", () => {
+        it("should get the count of the docs", async () => {
             const count = await datastore.count();
             expect(count).toBe(3);
         });
 
-        it('should get the count of the docs when limiting', async () => {
+        it("should get the count of the docs when limiting", async () => {
             const count = await datastore.count().limit(2);
             expect(count).toBe(2);
         });

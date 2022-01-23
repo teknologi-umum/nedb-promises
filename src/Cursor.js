@@ -1,4 +1,4 @@
-const OriginalCursor = require('@seald-io/nedb/lib/cursor');
+import OriginalCursor from "@seald-io/nedb/lib/cursor.js";
 
 /**
  * @class
@@ -18,22 +18,22 @@ class Cursor {
                 configurable: false,
                 enumerable: false,
                 writable: false,
-                value: original,
+                value: original
             },
 
             __prerequisite: {
                 configurable: false,
                 enumerable: false,
                 writable: false,
-                value: prerequisite,
+                value: prerequisite
             },
 
             __callback: {
                 configurable: false,
                 enumerable: false,
                 writable: false,
-                value: callback,
-            },
+                value: callback
+            }
         });
     }
 
@@ -104,7 +104,7 @@ class Cursor {
         return this.__prerequisite.then(() => {
             return new Promise((resolve, reject) => {
                 this.__original.exec((error, result) => {
-                    if ('function' === typeof this.__callback) {
+                    if (typeof this.__callback === "function") {
                         this.__callback(error, result);
                     }
 
@@ -144,4 +144,4 @@ class Cursor {
     }
 }
 
-module.exports = Cursor;
+export default Cursor;
