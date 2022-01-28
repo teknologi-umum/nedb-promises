@@ -41,11 +41,11 @@ class Cursor {
      * Sort the queried documents.
      *
      * See: https://github.com/louischatriot/nedb#sorting-and-paginating
-     * 
+     *
      * @return {Cursor}
      */
-    sort() {
-        this.__original.sort.apply(this.__original, arguments);
+    sort(...args) {
+        this.__original.sort(...args);
         return this;
     }
 
@@ -53,11 +53,11 @@ class Cursor {
      * Skip some of the queried documents.
      *
      * See: https://github.com/louischatriot/nedb#sorting-and-paginating
-     * 
+     *
      * @return {Cursor}
      */
-    skip() {
-        this.__original.skip.apply(this.__original, arguments);
+    skip(...args) {
+        this.__original.skip(...args);
         return this;
     }
 
@@ -65,11 +65,11 @@ class Cursor {
      * Limit the queried documents.
      *
      * See: https://github.com/louischatriot/nedb#sorting-and-paginating
-     * 
+     *
      * @return {Cursor}
      */
-    limit() {
-        this.__original.limit.apply(this.__original, arguments);
+    limit(...args) {
+        this.__original.limit(...args);
         return this;
     }
 
@@ -97,7 +97,7 @@ class Cursor {
      *  .sort(...)
      *  .limit(...)
      *  .exec()
-     * 
+     *
      * @return {Promise.<Object[]>}
      */
     exec() {
@@ -118,10 +118,10 @@ class Cursor {
 
     /**
      * Execute the cursor and set promise callbacks.
-     * 
+     *
      * For more information visit:
      * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then
-     * 
+     *
      * @param  {Function} fulfilled
      * @param  {Function} [rejected]
      * @return {Promise}
@@ -135,7 +135,7 @@ class Cursor {
      *
      * For more information visit:
      * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/catch
-     * 
+     *
      * @param  {Function} rejected
      * @return {Promise}
      */

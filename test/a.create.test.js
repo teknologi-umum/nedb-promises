@@ -1,9 +1,5 @@
 import { existsSync, unlinkSync } from "fs";
-import { dirname } from "path";
-import { fileURLToPath } from "url";
 import Datastore from "../src/Datastore.js";
-
-const root = dirname(fileURLToPath(import.meta.url, "."));
 
 describe("testing datastore creation", () => {
     describe("new Datastore('foo.db')", () => {
