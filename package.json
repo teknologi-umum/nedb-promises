@@ -1,6 +1,6 @@
 {
   "name": "@teknologi-umum/nedb-promises",
-  "version": "5.0.2",
+  "version": "5.0.3",
   "description": "A dead-simple promise wrapper for nedb.",
   "type": "module",
   "module": "index.js",
@@ -39,8 +39,8 @@
   },
   "devDependencies": {
     "@teknologi-umum/eslint-config-base": "^0.0.5",
-    "eslint": "^8.7.0",
+    "eslint": "^8.8.0",
     "jest": "^27.4.7",
-    "jsdoc-to-markdown": "^7.1.0"
+    "jsdoc-to-markdown": "^7.1.1"
   }
 }
