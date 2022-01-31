@@ -12,6 +12,13 @@
     "./package.json": "./package.json",
     "./*": "./*"
   },
+  "files": [
+    "README.md",
+    "LICENSE",
+    "index.js",
+    "index.d.ts",
+    "src/"
+  ],
   "scripts": {
     "docs": "jsdoc2md ./src/*.js > docs.md --no-gfm",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js ",
