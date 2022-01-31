@@ -1,15 +1,20 @@
 
 ![nedb-promises](https://github.com/bajankristof/nedb-promises/blob/master/logo.svg "nedb-promises")
 
-A dead-simple promise wrapper for [nedb](https://github.com/louischatriot/nedb#readme).
+A dead-simple promise wrapper for [nedb](https://github.com/louischatriot/nedb#readme). This fork provides ESM support
+and resolving vulnerability issues on the dev dependencies.
 
 Check out the [docs](https://github.com/bajankristof/nedb-promises/blob/master/docs.md).
 
 ##### IMPORTANT
 **As of `nedb-promises` `5.0.0` [nedb](https://github.com/louischatriot/nedb#readme) package has been replaced with a fork of the original package, [@seald-io/nedb](https://github.com/seald/nedb) to solve some vulnerability issues originating from `nedb`!**
 
+```sh
+npm install @teknologi-umum/nedb-promises
+```
+
 ```js
-const Datastore = require('nedb-promises')
+import Datastore from '@teknologi-umum/nedb-promises'
 let datastore = Datastore.create('/path/to/db.db')
 
 // #1
@@ -59,7 +64,7 @@ Check out the [original docs](https://github.com/louischatriot/nedb#readme)!
 #### load( )
 You don't need to call this as the module will automatically detect if the datastore has been loaded or not upon calling any other method. 
 ```js
-const Datastore = require('nedb-promises')
+import Datastore from '@teknologi-umum/nedb-promises'
 let datastore = Datastore.create('/path/to/db.db')
 datastore.load(...)
   .then(...)
@@ -71,7 +76,7 @@ These methods will return a Cursor object that works the same way it did before 
 The cool thing about this implementation of the Cursor is that it behaves like a Promise. Meaning that you can `await` it and you can call `.then()` on it.
 
 ```js
-const Datastore = require('nedb-promises')
+import Datastore from '@teknologi-umum/nedb-promises'
 let datastore = Datastore.create('/path/to/db.db')
 
 //outside Promise chain
